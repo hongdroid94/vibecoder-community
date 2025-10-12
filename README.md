@@ -38,16 +38,16 @@ npm run deploy
 2. `npm run deploy` 실행
 3. GitHub Pages 설정에서 `gh-pages` 브랜치 선택
 
-## 🗄️ Supabase 설정
+## 🗄️ Supabase 설정 ✅
 
-1. [Supabase](https://supabase.com)에서 새 프로젝트 생성
-2. `.env.local` 파일 생성 (`.env.example` 참고)
-3. Supabase 프로젝트 URL과 API 키 추가
+**상태:** 설정 완료!
 
-```env
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
+- **프로젝트:** vibecoder-community
+- **리전:** ap-northeast-2 (서울)
+- **데이터베이스:** users 테이블 생성 완료
+- **환경 변수:** `.env.local` 설정 완료
+
+자세한 내용은 `SUPABASE_SETUP.md` 파일을 참고하세요.
 
 ## 📋 데이터베이스 스키마
 
@@ -72,8 +72,9 @@ CREATE TABLE users (
 - ✅ 카운터 애니메이션
 - ✅ FAQ 아코디언
 - ✅ 폼 유효성 검증
-- 🚧 Supabase 연동 (진행 중)
-- 🚧 이메일 자동 발송 (예정)
+- ✅ Supabase 연동 완료
+- ✅ 실시간 가입 기능 작동
+- 🚧 환영 이메일 자동 발송 (예정)
 
 ## 📞 문의
 
