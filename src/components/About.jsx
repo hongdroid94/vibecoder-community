@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
-import { SiCursor, SiGithubcopilot, SiOpenai } from 'react-icons/si'
+import { SiGithub, SiOpenai } from 'react-icons/si'
+import { HiCode } from 'react-icons/hi'
 
 const About = () => {
   const tools = [
-    { name: 'Cursor', icon: SiCursor },
-    { name: 'Copilot', icon: SiGithubcopilot },
+    { name: 'Cursor', icon: HiCode },
+    { name: 'Copilot', icon: SiGithub },
     { name: 'ChatGPT', icon: SiOpenai },
   ]
 

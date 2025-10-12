@@ -1,4 +1,4 @@
-import { SiDiscord, SiTwitter, SiGithub } from 'react-icons/si'
+import { SiDiscord, SiX, SiGithub } from 'react-icons/si'
 
 const Footer = () => {
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
               className="hover:text-primary transition-colors"
               aria-label="Twitter"
             >
-              <SiTwitter className="w-6 h-6" />
+              <SiX className="w-6 h-6" />
             </a>
             <a
               href="https://github.com/hongdroid94/vibecoder-community"
