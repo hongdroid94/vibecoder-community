@@ -1,17 +1,25 @@
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 
 const Counter = ({ from, to, label }) => {
   const count = useMotionValue(from)
-  const rounded = useTransform(count, (latest) => Math.round(latest))
+  const [displayValue, setDisplayValue] = useState(from)
   const ref = useRef(null)
   const inView = useInView(ref, { once: true })
 
   useEffect(() => {
     if (inView) {
+      const unsubscribe = count.on('change', (latest) => {
+        setDisplayValue(Math.round(latest))
+      })
+      
       const controls = animate(count, to, { duration: 2 })
-      return controls.stop
+      
+      return () => {
+        unsubscribe()
+        controls.stop()
+      }
     }
   }, [inView, count, to])
 
@@ -23,9 +31,9 @@ const Counter = ({ from, to, label }) => {
       viewport={{ once: true }}
       className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg text-center"
     >
-      <motion.div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-        {rounded}+
-      </motion.div>
+      <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+        {displayValue}+
+      </div>
       <div className="text-gray-600 dark:text-gray-400">{label}</div>
     </motion.div>
   )
