@@ -3,9 +3,20 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || ''
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
 
+// 디버깅: 환경 변수 확인
+console.log('🔍 Supabase 환경 변수 체크:')
+console.log('URL:', supabaseUrl ? '✅ 설정됨' : '❌ 없음')
+console.log('Key:', supabaseAnonKey ? '✅ 설정됨' : '❌ 없음')
+
 export const supabase = supabaseUrl && supabaseAnonKey 
   ? createClient(supabaseUrl, supabaseAnonKey)
   : null
+
+if (supabase) {
+  console.log('✅ Supabase 클라이언트 초기화 완료')
+} else {
+  console.warn('⚠️ Supabase 클라이언트를 초기화할 수 없습니다. 환경 변수를 확인하세요.')
+}
 
 // 회원 가입 함수
 export const signupUser = async (userData) => {
