@@ -3,8 +3,20 @@ import { HiArrowDown } from 'react-icons/hi'
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-primary pt-20">
-      <div className="container mx-auto px-4 py-20 text-center">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* 배경 이미지 */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url(/vibecoder-community/hero.jpg)' }}
+      />
+      
+      {/* 그라데이션 오버레이 (텍스트 가독성을 위한 반투명 레이어) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-indigo-900/75 to-blue-900/80" />
+      
+      {/* 추가 어두운 오버레이 (다크모드 대응) */}
+      <div className="absolute inset-0 bg-black/20 dark:bg-black/40" />
+      
+      <div className="container mx-auto px-4 py-20 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
