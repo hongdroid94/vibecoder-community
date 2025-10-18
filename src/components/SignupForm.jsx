@@ -13,20 +13,22 @@ const SignupForm = () => {
     setIsSubmitting(true)
     
     try {
-      // Supabase에 저장
-      await signupUser(data)
+      // 임시로 로컬 스토리지에 저장 (결제 완료 후 Supabase에 저장 예정)
+      localStorage.setItem('codeflow_signup_data', JSON.stringify(data))
       
       setShowSuccess(true)
       reset()
-      
-      // 5초 후 성공 메시지 숨김
-      setTimeout(() => setShowSuccess(false), 5000)
     } catch (error) {
       console.error('Error:', error)
-      alert('가입 중 오류가 발생했습니다. 다시 시도해주세요.')
+      alert('제출 중 오류가 발생했습니다. 다시 시도해주세요.')
     } finally {
       setIsSubmitting(false)
     }
+  }
+  
+  const handlePayment = () => {
+    // 래피드 결제 링크로 이동
+    window.open('https://www.latpeed.com/products/PuCtP', '_blank')
   }
 
   return (
@@ -48,21 +50,39 @@ const SignupForm = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="mb-8 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-lg p-6 text-center"
+              className="mb-8 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 border-2 border-blue-200 dark:border-blue-800 rounded-2xl p-8 text-center shadow-xl"
             >
-              <HiCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-green-800 dark:text-green-200 mb-2">
-                환영합니다!
+              <HiCheckCircle className="w-20 h-20 text-blue-500 mx-auto mb-4" />
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                양식 제출 완료! 🎉
               </h3>
-              <p className="text-green-700 dark:text-green-300 mb-4">
-                가입이 완료되었습니다. 곧 환영 이메일을 받으실 거예요!
-              </p>
-              <a
-                href="https://discord.gg/vibecoder"
-                className="inline-block px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 mb-6">
+                <p className="text-lg text-gray-800 dark:text-gray-200 mb-2 font-semibold">
+                  거의 다 왔습니다!
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  CodeFlow 멤버가 되기 위해서는<br />
+                  <span className="font-bold text-blue-600 dark:text-blue-400">멤버십 결제</span>를 완료해주셔야 합니다.
+                </p>
+                <div className="bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-300 dark:border-yellow-700 rounded-lg p-4 mb-4">
+                  <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                    💡 결제 완료 후 운영진의 심사를 거쳐<br />최종 승인이 이루어집니다
+                  </p>
+                </div>
+              </div>
+              
+              <motion.button
+                onClick={handlePayment}
+                className="inline-flex items-center px-8 py-4 bg-gradient-button text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all mb-3"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Discord 참여하기
-              </a>
+                💳 멤버십 결제하러 가기
+              </motion.button>
+              
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                안전한 결제는 <a href="https://www.latpeed.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-700">래피드(Latpeed)</a>에서 진행됩니다
+              </p>
             </motion.div>
           )}
 
@@ -192,7 +212,7 @@ const SignupForm = () => {
                   가입 중...
                 </span>
               ) : (
-                '🚀 CodeFlow 시작하기'
+                '다음 단계: 멤버십 결제 →'
               )}
             </motion.button>
           </form>
