@@ -21,12 +21,12 @@ const Hero = () => {
           </p>
 
           <motion.a
-            href="#signup"
+            href="#about"
             className="inline-block px-8 py-4 bg-white text-primary font-bold text-lg rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            🚀 커뮤니티 가입하기
+            📖 더 알아보기
           </motion.a>
 
           <motion.p

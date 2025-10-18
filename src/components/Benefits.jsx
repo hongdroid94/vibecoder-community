@@ -67,6 +67,27 @@ const Benefits = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* 가입 유도 CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-12"
+        >
+          <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg">
+            함께 성장할 준비가 되셨나요?
+          </p>
+          <motion.a
+            href="#signup"
+            className="inline-block px-8 py-4 bg-gradient-button text-white font-bold text-lg rounded-lg shadow-lg hover:shadow-xl transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            🚀 지금 바로 가입하기
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   )
