@@ -7,7 +7,7 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: '바이브코더 커뮤니티는 무료인가요?',
+      question: 'CodeFlow는 무료인가요?',
       answer: '네, 완전 무료입니다! 커뮤니티 가입과 모든 활동은 무료로 참여하실 수 있습니다.'
     },
     {

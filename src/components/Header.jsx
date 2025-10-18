@@ -6,7 +6,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-gradient">바이브코더</span>
+            <span className="text-2xl font-bold text-gradient">CodeFlow</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">

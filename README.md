@@ -1,6 +1,6 @@
-# 바이브코더 커뮤니티 랜딩 페이지
+# CodeFlow 커뮤니티
 
-AI와 함께하는 새로운 코딩 방식, 바이브 코딩을 즐기는 개발자들의 온라인 커뮤니티입니다.
+AI와 함께 흐름을 타고 자연스럽게 코딩하는 개발자들의 온라인 커뮤니티입니다.
 
 ## 🚀 기술 스택
 
@@ -42,7 +42,7 @@ npm run deploy
 
 **상태:** 설정 완료!
 
-- **프로젝트:** vibecoder-community
+- **프로젝트:** codeflow-community
 - **리전:** ap-northeast-2 (서울)
 - **데이터베이스:** users 테이블 생성 완료
 - **환경 변수:** `.env.local` 설정 완료
@@ -78,8 +78,8 @@ CREATE TABLE users (
 
 ## 📞 문의
 
-- 이메일: contact@vibecoder.com
-- Discord: [바이브코더 커뮤니티](https://discord.gg/vibecoder)
+- 이메일: contact@codeflow.dev
+- Discord: [CodeFlow 커뮤니티](https://discord.gg/codeflow)
 - GitHub: [@hongdroid94](https://github.com/hongdroid94)
 
 ## 📄 라이센스
@@ -88,5 +88,5 @@ MIT License
 
 ---
 
-Made with ❤️ by 바이브코더 커뮤니티
+Made with ❤️ by CodeFlow
 

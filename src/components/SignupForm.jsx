@@ -40,7 +40,7 @@ const SignupForm = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              지금 바로 바이브코더가 되어보세요!
+              지금 바로 CodeFlow와 함께하세요!
             </h2>
           </div>
 
@@ -192,7 +192,7 @@ const SignupForm = () => {
                   가입 중...
                 </span>
               ) : (
-                '🚀 바이브코더 되기'
+                '🚀 CodeFlow 시작하기'
               )}
             </motion.button>
           </form>

@@ -23,13 +23,13 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            AI와 함께하는 새로운 코딩,<br />
-            바이브코더와 함께하세요
+            AI와 함께 흐름을 타고,<br />
+            CodeFlow와 함께하세요
           </h1>
           
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            AI 도구로 코딩하는 개발자들이 모여 경험을 나누고<br />
-            함께 성장하는 커뮤니티입니다
+            자연스럽게 코딩하는 개발자들이 모여<br />
+            경험을 나누고 함께 성장하는 커뮤니티입니다
           </p>
 
           <motion.a
@@ -47,7 +47,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            현재 <span className="font-bold text-white">128명</span>의 바이브코더가 활동중
+            현재 <span className="font-bold text-white">128명</span>이 CodeFlow와 함께 성장중
           </motion.p>
         </motion.div>
 
